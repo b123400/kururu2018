@@ -1,0 +1,87 @@
+$cd-size = 500px
+$cd-disc-size = 480px
+$cd-edge-size = 20px
+
+.cd
+  position relative
+  background-color red
+  width $cd-size
+  height $cd-size
+  margin-left 600px
+  margin-top 300px
+  perspective 2000px
+
+  &__cover
+    position absolute
+    width $cd-size
+    height $cd-size
+    transform-origin 0
+    transform rotateY(-30deg)
+    transition all 1s
+
+  &__cover-front
+    position absolute
+    transform rotateY(0deg)
+    backface-visibility hidden
+    background-color yellow
+    width $cd-size
+    height $cd-size
+
+  &__cover-back
+    position absolute
+    transform rotateY(180deg)
+    backface-visibility hidden
+    background-color blue
+    width $cd-size
+    height $cd-size
+
+  &__cover-edge1
+    position absolute
+    top 0
+    right 0
+    width $cd-edge-size
+    height $cd-size
+    transform rotateY(-90deg)
+    transform-origin 100% 0
+    background-color gray
+    backface-visibility visible
+
+  &__cover-edge2
+    position absolute
+    left 0
+    bottom 0
+    height $cd-edge-size
+    width $cd-size
+    background-color gray
+    transform rotateX(90deg)
+    transform-origin 0 100%
+    backface-visibility visible
+
+  &__cover-edge3
+    position absolute
+    left 0
+    top 0
+    height $cd-edge-size
+    width $cd-size
+    background-color gray
+    transform rotateX(-90deg)
+    transform-origin 0 0
+    backface-visibility visible
+
+  &__disc
+    position absolute
+    width $cd-disc-size
+    height $cd-disc-size
+    border-radius ($cd-disc-size / 2)
+    background-color green
+    top (($cd-size - $cd-disc-size) / 2)
+    left (($cd-size - $cd-disc-size) / 2)
+    box-shadow black 0 1px 5px 0px
+    transition all 2s
+
+  &:hover &__cover
+    transform rotateY(-180deg)
+
+  &:hover &__disc
+    transform scale(1.1) translateZ(1px)
+    box-shadow black 0 1px 5px 0px

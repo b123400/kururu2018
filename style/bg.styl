@@ -1,0 +1,150 @@
+@import './colour';
+
+$set-size-h = 200px
+$set-size-l = 120px
+$set-size-m = 70px
+$set-size-s = 50px
+
+.bg
+  position fixed
+  left 0
+  top 0
+  height 100%
+  width 100%
+  background-color $bg
+  display flex
+  flex-direction column
+
+  .bg-sets
+    display flex
+    flex-grow 1
+    flex-shrink 0
+    flex-basis 1
+
+  .bg-set
+    flex-grow 1
+    flex-shrink 0
+    flex-basis 1
+    flex-direction row
+    position relative
+    min-width 300px
+
+    .h
+      border-radius 25px
+      background-color #AED9DB
+      width $set-size-h
+      height $set-size-h
+      top 50%
+      left 50%
+      margin-left -($set-size-h / 2)
+      transform rotateZ(45deg)
+    .l
+      border-radius 10px
+      background-color #ADD9C6
+      width $set-size-l
+      height $set-size-l
+    .m
+      border-radius 7px
+      background-color #91CFBE
+      width $set-size-m
+      height $set-size-m
+    .s
+      border-radius 5px
+      background-color #C6E3CE
+      width $set-size-s
+      height $set-size-s
+
+    .h, .l, .m, .s
+      position absolute
+  .s1
+    .h
+      margin-left -150px
+      margin-top -65px
+    .l
+      left -129px
+    .m
+      left -82px
+      top 128px
+    .s
+      top 208px
+      left 134px
+  .s2
+    .h
+      margin-top -84px
+      margin-left -74px
+    .l
+      top 216px
+      left 78px
+    .m
+      top 216px
+    .s
+      left -60px
+  .s3
+    .h
+      margin-top -30px
+      margin-left -56px
+    .l
+      left 77px
+      top -133px
+    .m
+      top 214px
+    .s
+      top -63px
+  .s4
+    .h
+      margin-left -132px
+    .l
+      top 217px
+    .m
+      top 120px
+      left -83px
+    .s
+      top -60px
+  .s5
+    .l
+      left 20px
+      top 213px
+    .m
+      top -79px
+    .s
+      top -62px
+      left 112px
+  .s6
+    .l
+      left 100px
+      top -132px
+    .m
+      left -83px
+      top 107px
+    .s
+      left 10px
+      top -59px
+  .s7
+    .l
+      top 218px
+    .m
+      left 211px
+    .s
+      top -58px
+      left 70px
+  .s8
+    .h
+      margin-top 35px
+    .l
+      left 21px
+      top -132px
+    .m
+      left 213px
+    .s
+      top 141px
+      left -61px
+  .s9
+    .l
+      left 96px
+      top -129px
+    .m
+      left -77px
+      top 100px
+    .s
+      left 20px
+      top -57px
