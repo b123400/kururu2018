@@ -1,0 +1,34 @@
+.section4
+  .bag
+    text-align: center;
+    img
+      max-width 100%
+      box-shadow #000 0 0 5px 0
+
+  .price
+    text-align center
+    margin-top -300px
+    margin-bottom 300px
+    color #ffd11a
+    font-size 66px
+    text-shadow 0 0 10px rgba(222, 132, 21, 0.98)
+    animation-name price-glow
+    animation-iteration-count infinite
+    animation-duration 2s
+
+  .effects
+    text-align center
+    opacity 0
+
+    .effect-cd
+      box-shadow: #000 0 0 3px 0;
+
+@media (max-width: 500px)
+  .effects
+    display none
+
+@keyframes price-glow {
+    0%     {text-shadow: 0 0 10px rgba(222, 132, 21, 0.98);}
+    50%    {text-shadow: 0 0 20px rgba(222, 132, 21, 0.98);}
+    100%   {text-shadow: 0 0 10px rgba(222, 132, 21, 0.98);}
+}

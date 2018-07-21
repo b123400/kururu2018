@@ -38,24 +38,35 @@ $set-size-s = 50px
       left 50%
       margin-left -($set-size-h / 2)
       transform rotateZ(45deg)
+      animation-duration 0.5s
+      animation-name bg-zoom-h
     .l
       border-radius 10px
       background-color #ADD9C6
       width $set-size-l
       height $set-size-l
+      animation-duration 0.7s
+      animation-name bg-zoom-l
     .m
       border-radius 7px
       background-color #91CFBE
       width $set-size-m
       height $set-size-m
+      animation-duration 0.9s
+      animation-name bg-zoom-m
     .s
       border-radius 5px
       background-color #C6E3CE
       width $set-size-s
       height $set-size-s
+      animation-duration 1.1s
+      animation-name bg-zoom-s
 
     .h, .l, .m, .s
       position absolute
+      animation-timing-function cubic-bezier(.17,.67,.26,.99)
+      animation-duration
+
   .s1
     .h
       margin-left -150px
@@ -148,3 +159,26 @@ $set-size-s = 50px
     .s
       left 20px
       top -57px
+
+@keyframes bg-zoom-h {
+    0%     {transform: rotateZ(45deg) scale(0);}
+    100%   {transform: rotateZ(45deg) scale(1);}
+}
+
+@keyframes bg-zoom-l {
+    0%      {transform: scale(0);}
+    20%     {transform: scale(0);}
+    100%   {transform: scale(1);}
+}
+
+@keyframes bg-zoom-m {
+    0%      {transform: scale(0);}
+    40%     {transform: scale(0);}
+    100%   {transform: scale(1);}
+}
+
+@keyframes bg-zoom-s {
+    0%      {transform: scale(0);}
+    60%     {transform: scale(0);}
+    100%   {transform: scale(1);}
+}
