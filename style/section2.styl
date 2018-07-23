@@ -4,30 +4,24 @@
   text-shadow 0 0 20px $text-shadow-pink
 
 .strap
-  position absolute
-  right 50%
+  position relative
   width 259px
   height 485px
   top 0px
+  display inline-block
 
 .mousepad
-  position absolute
-  top 200px
+  position relative
+  margin-top 200px
   width 500px
   height 329px
-  left 50%
+  display inline-block
 
 @media (max-width: 500px)
   .strap
-    position relative
-    right auto
     width 259px
     height auto
-    top auto
 
   .mousepad
-    position relative
-    top auto
     width 500px
     height auto
-    left auto
