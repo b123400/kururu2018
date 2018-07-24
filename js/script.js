@@ -56,9 +56,10 @@ function updateCdOverlay() {
                + 'scaleY('+ (targetHeight / cdHeight) +') ',
     'opacity': 1,
   });
+  $('.cd__cover').addClass('peek');
   setTimeout(function() {
     $('.cd').css({
-      'transform': 'rotateX(25deg) rotateY(-45deg)',
+      'transform': 'rotateX(5deg) rotateY(-5deg)',
       'transition': 'all 1s'
     });
     $('.cd-description').css({
@@ -136,3 +137,5 @@ function updateSection4Effect() {
     });
   }
 }
+
+console.log('誰かこの汚いソースコードをなんとかしてください');

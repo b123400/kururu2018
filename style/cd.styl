@@ -2,46 +2,52 @@ $cd-width = 550px
 $cd-height = 510px
 $cd-disc-size = 480px
 $cd-edge-size = 20px
+$edge-color = rgba(180, 180, 180, 0.9)
 
 .cd
   position relative
-  // background-color white
+  background-color rgba(255, 255, 255, 0.9)
   width $cd-width
   height $cd-height
   // margin-left 600px
   // margin-top 300px
   perspective 12000px
-  // box-shadow black 0 0 2px 0
-  // transform rotateX(25deg) rotateY(-45deg)
+  box-shadow black 0 0 10px 0
+  background-color #fff3f3
   left 50%
   transform-origin 0 0
+  transform-style preserve-3d
 
   &__cover
     position absolute
     width $cd-width
     height $cd-height
     transform-origin 0
-    // transform rotateY(-30deg)
-    transform rotateY(0deg)
-    // transition all 1s
+    transform: translateZ(0.2px) rotateY(0deg)
+    transition all 1s
+    transform-style preserve-3d
+
+  &__cover.peek
+    transform: translateZ(0.2px) rotateY(-35deg)
 
   &__cover-front
     position absolute
-    transform rotateY(0deg)
+    transform translateZ(0.1px)
     backface-visibility hidden
     background-color rgba(255, 255, 255, 0.6)
     width $cd-width
     height $cd-height
     background-image url('images/cd-cover.png')
-    // box-shadow black 0 0 20px 0
+    box-shadow black 0 0 10px 0
 
   &__cover-back
     position absolute
     transform rotateY(180deg)
     backface-visibility hidden
-    // background-color white
+    background-color #eee2e2
     width $cd-width
     height $cd-height
+    box-shadow black 0 0 10px 0
 
   &__cover-edge1
     position absolute
@@ -51,7 +57,7 @@ $cd-edge-size = 20px
     height $cd-height
     transform rotateY(-90deg)
     transform-origin 100% 0
-    background-color gray
+    background-color $edge-color
     backface-visibility visible
 
   &__cover-edge2
@@ -60,7 +66,7 @@ $cd-edge-size = 20px
     bottom 0
     height $cd-edge-size
     width $cd-width
-    background-color gray
+    background-color $edge-color
     transform rotateX(90deg)
     transform-origin 0 100%
     backface-visibility visible
@@ -71,7 +77,7 @@ $cd-edge-size = 20px
     top 0
     height $cd-edge-size
     width $cd-width
-    background-color gray
+    background-color $edge-color
     transform rotateX(-90deg)
     transform-origin 0 0
     backface-visibility visible
@@ -82,7 +88,7 @@ $cd-edge-size = 20px
     top 0
     height $cd-height
     width $cd-edge-size
-    background-color gray
+    background-color $edge-color
     transform rotateY(90deg)
     transform-origin 0 0
     backface-visibility visible
@@ -92,18 +98,19 @@ $cd-edge-size = 20px
     width $cd-disc-size
     height $cd-disc-size
     border-radius ($cd-disc-size / 2)
-    background-color white
     top (($cd-height - $cd-disc-size) / 2)
     left (($cd-width - $cd-disc-size) / 2)
-    box-shadow black 0 1px 5px 0px
+    transform translateZ(0.1px)
     transition all 2s
+    background-image url("images/cd-disc.png")
+    background-size cover
+    background-position center
 
-  // &:hover &__cover
-  //   transform rotateY(-180deg)
+  &:hover &__cover
+    transform rotateY(-100deg)
 
-  // &:hover &__disc
-  //   transform scale(1.1) translateZ(1px)
-  //   box-shadow black 0 1px 5px 0px
+  &:hover &__disc
+    transform translateZ(0.1px) scale(1.15)
 
 .cd-description
   position absolute
