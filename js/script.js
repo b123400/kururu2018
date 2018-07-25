@@ -14,6 +14,15 @@ $(function(){
 
   $(window).scroll(updateSection3Offset);
   $(window).scroll(updateSection4Effect);
+
+  $('.cd').on('touchstart', function(){
+    $('.cd__cover').addClass('open');
+    $('.cd__disc').addClass('open');
+  });
+  $('.cd').on('touchend', function(){
+    $('.cd__cover').removeClass('open');
+    $('.cd__disc').removeClass('open');
+  });
 });
 
 function initCdAnimations() {
